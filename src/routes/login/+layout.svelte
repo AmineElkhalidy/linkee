@@ -9,7 +9,7 @@
   <title>{title}</title>
 </svelte:head>
 
-<nav class="flex justify-center my-6">
+<nav class="flex justify-center my-6 mt-32 sm:mt-40">
   <ul class="steps">
     <a href="/login" class="step step-primary">Sign In</a>
     <a

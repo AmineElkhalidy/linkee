@@ -22,10 +22,13 @@
 
     debounceTimer = setTimeout(async () => {
       console.log("Checking availability of ", username);
+      // Get the doc ref
       const ref = doc(db, "usernames", username);
-      const exists = getDoc(ref).then((doc) => doc.exists());
 
-      isAvailable = !exists;
+      // Check if it exists
+      const result = getDoc(ref).then((doc) => doc.exists());
+
+      isAvailable = !result;
       loading = false;
     }, 500);
   }
@@ -54,8 +57,8 @@
 </script>
 
 <AuthCheck>
-  <h2 class="text-xl font-semibold">Choose a username:</h2>
-  <form class="w-2/5" on:submit|preventDefault={confirmUsername}>
+  <h2 class="text-xl font-semibold text-white mb-2">Choose a username:</h2>
+  <form class="w-5/6 sm:w-3/6" on:submit|preventDefault={confirmUsername}>
     <input
       type="text"
       placeholder="Username"
@@ -87,7 +90,7 @@
       {/if}
 
       {#if isAvailable}
-        <button class="btn btn-success">Confirm username @{username} </button>
+        <button class="btn btn-success">Confirm Username @{username} </button>
       {/if}
     </div>
   </form>
