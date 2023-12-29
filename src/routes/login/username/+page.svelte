@@ -24,17 +24,14 @@
       console.log("Checking availability of ", username);
       // Get the doc ref
       const ref = doc(db, "usernames", username);
-
       // Check if it exists
       const result = getDoc(ref).then((doc) => doc.exists());
-
       isAvailable = !result;
       loading = false;
     }, 500);
   }
 
   async function confirmUsername() {
-    console.log("confirming username ", username);
     const batch = writeBatch(db);
     batch.set(doc(db, "usernames", username), { uid: $user?.uid });
     batch.set(doc(db, "users", $user!.uid), {

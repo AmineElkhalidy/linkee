@@ -9,7 +9,7 @@
   </h2>
   <div>
     {#if $user}
-      <div class="avatar online">
+      <div class="avatar">
         <div class="w-24 rounded-full border border-indigo-500">
           <img src={$user.photoURL} alt="User profile" />
         </div>
