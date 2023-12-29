@@ -1,6 +1,6 @@
 <script lang="ts">
   import AuthCheck from "$lib/components/AuthCheck.svelte";
-  import { db, user } from "$lib/firebase";
+  import { db, user, userData } from "$lib/firebase";
   import { doc, getDoc, writeBatch } from "firebase/firestore";
 
   let username = "";
@@ -25,8 +25,9 @@
       // Get the doc ref
       const ref = doc(db, "usernames", username);
       // Check if it exists
-      const result = getDoc(ref).then((doc) => doc.exists());
-      isAvailable = !result;
+      const exists = await getDoc(ref).then((doc) => doc.exists());
+
+      isAvailable = !exists;
       loading = false;
     }, 500);
   }
@@ -50,45 +51,61 @@
 
     // execute the batch
     batch.commit();
+    username = "";
+    isAvailable = false;
   }
 </script>
 
 <AuthCheck>
-  <h2 class="text-xl font-semibold text-white mb-2">Choose a username:</h2>
-  <form class="w-5/6 sm:w-3/6" on:submit|preventDefault={confirmUsername}>
-    <input
-      type="text"
-      placeholder="Username"
-      class="input w-full"
-      bind:value={username}
-      on:input={checkAvailability}
-      class:input-error={!isValid && isTouched}
-      class:input-warning={isTaken}
-      class:input-success={isAvailable && isValid && !loading}
-    />
+  {#if $userData?.username}
+    <h2 class="text-lg sm:text-xl font-semibold text-white -mb-2">
+      Your username is <span class="text-green-500">
+        @{$userData.username}
+      </span>
+    </h2>
 
-    <!-- class:input-error, class:input-warning and  class:input-success comes from daisyui-->
+    <p class="mb-3">(Usernames cannot be changed)</p>
+    <a
+      href="/login/photo"
+      class="btn btn-primary px-10 text-white font-semibold sm:text-lg"
+      >Upload Profile Image</a
+    >
+  {:else}
+    <form class="w-5/6 sm:w-3/6" on:submit|preventDefault={confirmUsername}>
+      <input
+        type="text"
+        placeholder="Username"
+        class="input w-full"
+        bind:value={username}
+        on:input={checkAvailability}
+        class:input-error={!isValid && isTouched}
+        class:input-warning={isTaken}
+        class:input-success={isAvailable && isValid && !loading}
+      />
 
-    <div class="my-4 min-h-16 px-8 w-full">
-      {#if loading}
-        <p class="text-secondary">Checking availability of @{username}...</p>
-      {/if}
+      <!-- class:input-error, class:input-warning and  class:input-success comes from daisyui-->
 
-      {#if !isValid && isTouched}
-        <p class="text-error text-sm">
-          must be 3-16 characters long, alphanumeric only
-        </p>
-      {/if}
+      <div class="my-4 min-h-16 px-8 w-full">
+        {#if loading}
+          <p class="text-secondary">Checking availability of @{username}...</p>
+        {/if}
 
-      {#if isValid && !isAvailable && !loading}
-        <p class="text-warning text-sm">
-          @{username} is not available
-        </p>
-      {/if}
+        {#if !isValid && isTouched}
+          <p class="text-error text-sm">
+            must be 3-16 characters long, alphanumeric only
+          </p>
+        {/if}
 
-      {#if isAvailable}
-        <button class="btn btn-success">Confirm Username @{username} </button>
-      {/if}
-    </div>
-  </form>
+        {#if isValid && !isAvailable && !loading}
+          <p class="text-warning text-sm">
+            @{username} is not available
+          </p>
+        {/if}
+
+        {#if isAvailable}
+          <button class="btn btn-success">Confirm Username @{username} </button>
+        {/if}
+      </div>
+    </form>
+  {/if}
 </AuthCheck>

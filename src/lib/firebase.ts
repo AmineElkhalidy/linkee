@@ -2,8 +2,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged, type User } from "firebase/auth";
 import { getStorage } from "firebase/storage";
-import { getFirestore } from "firebase/firestore";
-import { writable } from "svelte/store";
+import { getFirestore, doc, onSnapshot } from "firebase/firestore";
+import { derived, writable, type Readable } from "svelte/store";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,7 +22,7 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const db = getFirestore();
-export const storage = getStorage;
+export const storage = getStorage();
 
 function userStore() {
   let unsubscribe: () => void;
@@ -47,3 +47,52 @@ function userStore() {
 }
 
 export const user = userStore();
+
+// export const userData = writable<any>(null);
+
+// Subscribe to existing user
+// user.subscribe((user) => {
+//   const docRef = doc(db, `users/${user?.uid}`);
+//   onSnapshot(docRef, (snapshot) => {
+//     userData.set(snapshot.data());
+//   });
+// });
+
+export function docStore<T>(path: string) {
+  // Create a ref for that document
+  const docRef = doc(db, path);
+
+  let unsubscribe: () => void;
+
+  const { subscribe } = writable<T | null>(null, (set) => {
+    unsubscribe = onSnapshot(docRef, (snapshot) => {
+      set((snapshot.data() as T) ?? null);
+    });
+
+    return () => unsubscribe();
+  });
+
+  return {
+    subscribe,
+    ref: docRef,
+    id: docRef.id,
+  };
+}
+
+interface UserData {
+  username: string;
+  bio: string;
+  photoURL: string;
+  links: any[];
+}
+
+export const userData: Readable<UserData | null> = derived(
+  user,
+  ($user, set) => {
+    if ($user) {
+      return docStore(`users/${$user.uid}`).subscribe(set);
+    } else {
+      set(null);
+    }
+  }
+);

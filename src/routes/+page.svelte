@@ -5,14 +5,14 @@
         <h1 class="text-5xl font-bold text-white">
           <span class="gradient-text">Linkee:</span> Shape Yourself in One Link
         </h1>
-        <p class="py-6 lg:px-20 text-gray-200">
+        <p class="py-6 lg:px-20 text-gray-200 mb-6">
           Join 40M+ people using Linkee for their link in bio. One link to help
           you share everything you create, curate and sell from your Instagram,
           TikTok, Twitter, YouTube and other social media profiles.
         </p>
         <a
           href="/login"
-          class="btn gradient-btn text-white rounded-full px-10 text-lg md:text-xl duration-300 hover:scale-110"
+          class="gradient-btn text-white rounded-full font-semibold px-10 py-4 text-lg md:text-xl duration-300 hover:scale-110"
           >Get Started</a
         >
       </div>

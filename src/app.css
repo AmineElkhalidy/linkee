@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "Rubik", sans-serif;
+}
+
 .gradient-text {
   background: #b16cea;
   background-image: linear-gradient(

@@ -13,21 +13,18 @@
 
 <!-- $user: We subscribe to the user store... -->
 {#if $user}
-  <h2 class="text-xl md:text-2x font-semibold text-white uppercase">
+  <h2 class="text-xl md:text-2xl font-semibold text-white uppercase mb-2">
     Welcome <span class="gradient-text">{$user.displayName}</span>
   </h2>
 
-  <div class="mb-4">
-    <p class="text-gray-200 text-lg -mb-1">We are happy to see you around!</p>
-    <p class="text-gray-200 text-lg">Start customizing/adding your info!</p>
-  </div>
   <button
-    class="btn btn-primary text-white text-lg px-10"
-    on:click={() => goto("/login/username")}>Next</button
+    class="btn btn-primary text-white sm:text-lg px-10"
+    on:click={() => goto("/login/username")}>Change Username</button
   >
 {:else}
   <h2 class="text-xl text-white font-semibold mb-2">Sign in to your account</h2>
-  <button class="btn btn-primary text-white text-lg" on:click={signInWithGoogle}
-    >Sign in with Google</button
+  <button
+    class="btn btn-primary text-white sm:text-lg"
+    on:click={signInWithGoogle}>Sign in with Google</button
   >
 {/if}
