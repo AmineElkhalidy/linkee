@@ -13,7 +13,7 @@
   </div>
 {:else}
   <div class="toast toast-end" out:fly={{ x: "100%", duration: 200 }}>
-    <div class="alert alert-info">
+    <div class="alert alert-warning">
       <Power color="white" />
       <span class="text-white">You are signed out.</span>
     </div>

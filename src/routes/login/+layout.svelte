@@ -1,6 +1,18 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
+  import Toast from "$lib/components/Toast.svelte";
+  import { writable } from "svelte/store";
+  import { onMount } from "svelte";
+
+  const isVisible = writable(true);
+  onMount(() => {
+    const timeout = setTimeout(() => {
+      isVisible.set(false);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  });
 
   export let title = "Login";
 </script>
@@ -36,3 +48,7 @@
     </div>
   </main>
 </AnimatedRoute>
+
+{#if $isVisible}
+  <Toast />
+{/if}

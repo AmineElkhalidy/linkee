@@ -6,14 +6,14 @@
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
-    const user = signInWithPopup(auth, provider);
-    console.log(user);
+    const userData = signInWithPopup(auth, provider);
+    console.log(userData);
   };
 </script>
 
 <!-- $user: We subscribe to the user store... -->
 {#if $user}
-  <h2 class="text-xl md:text-2xl font-semibold text-white uppercase">
+  <h2 class="text-xl md:text-2x font-semibold text-white uppercase">
     Welcome <span class="gradient-text">{$user.displayName}</span>
   </h2>
 
