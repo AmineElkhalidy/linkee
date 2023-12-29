@@ -6,7 +6,7 @@
 
   let previewURL: string;
   let uploading = false;
-  // $: href = `/${$userData?.username}/links`;
+  $: href = `/${$userData?.username}`;
 
   async function upload(e: any) {
     uploading = true;
@@ -92,7 +92,7 @@
     <!-- Button -->
     <div class="mt-4">
       <a
-        href="/"
+        {href}
         class="btn btn-primary text-white px-10 font-semibold sm:text-lg"
       >
         Finish
