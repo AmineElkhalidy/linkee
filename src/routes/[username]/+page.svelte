@@ -13,7 +13,7 @@
   <title>@{data.username} Links</title>
 </svelte:head>
 
-<main class="prose text-center mx-auto mt-32">
+<main class="prose text-center mx-auto mt-16">
   <h1 class="text-5xl sm:text-6xl md:text-7xl text-purple-500">
     @{data.username}
   </h1>
@@ -41,6 +41,8 @@
   </div>
 
   <div class="flex justify-center items-center mb-8">
-    <a {href} class="btn btn-success px-10 text-white">Add Links</a>
+    <a {href} class="btn btn-outline btn-info mx-auto my-4 px-10">
+      Add a Link
+    </a>
   </div>
 </main>
