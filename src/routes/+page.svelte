@@ -1,3 +1,8 @@
+<script>
+  import Navbar from "$lib/components/Navbar.svelte";
+</script>
+
+<Navbar />
 <main>
   <div class="hero min-h-screen bg-base-200">
     <div class="hero-content text-center mt-20">
