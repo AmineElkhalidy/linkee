@@ -33,7 +33,7 @@
 
   <div>
     <p class="text-lg mb-2">Your social links:</p>
-    <ul class="list-none mb-6 flex flex-col justify-center items-center">
+    <ul class="list-none mb-6 flex flex-col justify-center items-center gap-4">
       {#each data.links as item}
         <UserLink {...item} />
       {/each}

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  // import UserLink from "$lib/components/UserLink.svelte";
+  import UserLink from "$lib/components/UserLink.svelte";
   import { db, userData, user } from "$lib/firebase";
   import {
     arrayRemove,
@@ -10,6 +10,7 @@
     updateDoc,
   } from "firebase/firestore";
   import { writable } from "svelte/store";
+  import SortableList from "$lib/components/SortableList.svelte";
 
   const icons = [
     "X (Twitter Before)",
@@ -64,9 +65,15 @@
     formData.set(formDefaults);
     showForm = false;
   }
+
+  function sortList(e: CustomEvent) {
+    const newList = e.detail;
+    const userRef = doc(db, "users", $user!.uid);
+    setDoc(userRef, { links: newList }, { merge: true });
+  }
 </script>
 
-<main class="max-w-xl mx-auto mt-32">
+<main class="max-w-xl w-full mx-auto mt-32">
   {#if $userData?.username == $page.params.username}
     <h1
       class="mx-2 text-2xl font-bold mt-8 mb-4 text-center text-white md:text-3xl"
@@ -75,11 +82,21 @@
     </h1>
 
     <!-- INSERT sortable list here -->
+    <SortableList list={$userData?.links} on:sort={sortList} let:item>
+      <div class="group relative">
+        <UserLink {...item} />
+        <button
+          on:click={() => deleteLink(item)}
+          class="btn btn-xs btn-error invisible group-hover:visible transition-all absolute -right-6 bottom-10"
+          >Delete</button
+        >
+      </div>
+    </SortableList>
 
     {#if showForm}
       <form
         on:submit|preventDefault={addLink}
-        class="bg-base-200 p-6 w-full mx-auto rounded-xl"
+        class="bg-base-200 p-6 w-full mx-auto rounded-xl my-6"
       >
         <div class="mb-3">
           <select
@@ -129,7 +146,7 @@
         >
         <button
           type="button"
-          class="btn btn-xs my-4 px-10 text-white"
+          class="btn btn-error my-4 px-10 py-4 text-white"
           on:click={cancelLink}>Cancel</button
         >
       </form>
