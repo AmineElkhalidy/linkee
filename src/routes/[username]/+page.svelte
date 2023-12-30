@@ -20,7 +20,7 @@
       src={data.photoURL ?? "/profile.webp"}
       alt="Pic URL"
       width="256"
-      class="mx-auto rounded-full"
+      class="mx-auto rounded-full border border-purple-500"
     />
   </div>
 
@@ -28,9 +28,12 @@
     {data.bio ?? "No bio yet..."}
   </p>
 
-  <ul class="list-none">
-    {#each data.links as item}
-      <UserLink {...item} />
-    {/each}
-  </ul>
+  <div class="">
+    <p class="text-lg mb-2">Your social links:</p>
+    <ul class="list-none mb-6">
+      {#each data.links as item}
+        <UserLink {...item} />
+      {/each}
+    </ul>
+  </div>
 </main>

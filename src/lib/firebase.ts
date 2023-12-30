@@ -45,7 +45,6 @@ function userStore() {
 
   return { subscribe };
 }
-
 export const user = userStore();
 
 // export const userData = writable<any>(null);

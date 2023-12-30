@@ -2,6 +2,23 @@
   import { user } from "$lib/firebase";
   import { CheckCircle, Power } from "lucide-svelte";
   import { fly } from "svelte/transition";
+  import { onMount } from "svelte";
+  import { writable } from "svelte/store";
+
+  const isVisible = writable(true);
+  onMount(() => {
+    const timeout = setTimeout(() => {
+      isVisible.set(false);
+    }, 5000);
+
+    return () => clearTimeout(timeout);
+  });
+
+  let loggedIn = false;
+  if (user) {
+    loggedIn = true;
+  }
+  // export let message = "You have to sign in!";
 </script>
 
 {#if $user}
@@ -19,3 +36,18 @@
     </div>
   </div>
 {/if}
+
+<!-- <div class="toast toast-end" out:fly={{ x: "100%", duration: 200 }}>
+  <div
+    class="alert {loggedIn
+      ? 'alert-success'
+      : 'alert-warning'} flex items-center gap-2"
+  >
+    {#if loggedIn}
+      <CheckCircle color="white" />
+    {:else}
+      <Power color="white" />
+    {/if}
+    <span class="text-white">{message}</span>
+  </div>
+</div> -->

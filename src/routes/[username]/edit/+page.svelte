@@ -1,8 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import UserLink from "$lib/components/UserLink.svelte";
-  import SortableList from "$lib/components/SortableList.svelte";
-  import type { PageData } from "./$types";
+  // import UserLink from "$lib/components/UserLink.svelte";
   import { db, userData, user } from "$lib/firebase";
   import {
     arrayRemove,
@@ -13,7 +11,14 @@
   } from "firebase/firestore";
   import { writable } from "svelte/store";
 
-  const icons = ["X", "YouTube", "TikTok", "LinkedIn", "GitHub", "Custom"];
+  const icons = [
+    "X (Twitter Before)",
+    "YouTube",
+    "TikTok",
+    "LinkedIn",
+    "GitHub",
+    "Custom",
+  ];
 
   const formDefaults = {
     icon: "custom",
@@ -59,18 +64,13 @@
     formData.set(formDefaults);
     showForm = false;
   }
-
-  export let data: PageData;
-  function sortList(e: CustomEvent) {
-    const newList = e.detail;
-    const userRef = doc(db, "users", $user!.uid);
-    setDoc(userRef, { links: newList }, { merge: true });
-  }
 </script>
 
-<main class="max-w-xl mx-auto">
+<main class="max-w-xl mx-auto mt-32">
   {#if $userData?.username == $page.params.username}
-    <h1 class="mx-2 text-2xl font-bold mt-8 mb-4 text-center">
+    <h1
+      class="mx-2 text-2xl font-bold mt-8 mb-4 text-center text-white md:text-3xl"
+    >
       Edit your Profile
     </h1>
 
@@ -81,29 +81,35 @@
         on:submit|preventDefault={addLink}
         class="bg-base-200 p-6 w-full mx-auto rounded-xl"
       >
-        <select
-          name="icon"
-          class="select select-sm"
-          bind:value={$formData.icon}
-        >
-          {#each icons as icon}
-            <option value={icon.toLowerCase()}>{icon}</option>
-          {/each}
-        </select>
-        <input
-          name="title"
-          type="text"
-          placeholder="Title"
-          class="input input-sm"
-          bind:value={$formData.title}
-        />
-        <input
-          name="url"
-          type="text"
-          placeholder="URL"
-          class="input input-sm"
-          bind:value={$formData.url}
-        />
+        <div class="mb-3">
+          <select
+            name="icon"
+            class="select select-sm"
+            bind:value={$formData.icon}
+          >
+            {#each icons as icon}
+              <option value={icon.toLowerCase()}>{icon}</option>
+            {/each}
+          </select>
+          <input
+            name="title"
+            type="text"
+            placeholder="Title"
+            class="input input-sm"
+            bind:value={$formData.title}
+          />
+        </div>
+
+        <div class="mb-3">
+          <input
+            name="url"
+            type="text"
+            placeholder="URL"
+            class="input input-sm"
+            bind:value={$formData.url}
+          />
+        </div>
+
         <div class="my-4">
           {#if !titleIsValid}
             <p class="text-error text-xs">Must have valid title</p>
@@ -121,15 +127,16 @@
           type="submit"
           class="btn btn-success block">Add Link</button
         >
-
-        <button type="button" class="btn btn-xs my-4" on:click={cancelLink}
-          >Cancel</button
+        <button
+          type="button"
+          class="btn btn-xs my-4 px-10 text-white"
+          on:click={cancelLink}>Cancel</button
         >
       </form>
     {:else}
       <button
         on:click={() => (showForm = true)}
-        class="btn btn-outline btn-info block mx-auto my-4"
+        class="btn btn-outline btn-info block mx-auto my-4 px-10"
       >
         Add a Link
       </button>
