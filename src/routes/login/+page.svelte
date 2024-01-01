@@ -1,13 +1,30 @@
 <script lang="ts">
   import { auth } from "$lib/firebase";
-  import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+  import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
   import { user } from "$lib/firebase";
   import { goto } from "$app/navigation";
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
-    const userData = signInWithPopup(auth, provider);
-    console.log(userData);
+    const credentiel = await signInWithPopup(auth, provider);
+
+    const idToken = await credentiel.user.getIdToken();
+
+    const res = await fetch("/api/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ idToken }),
+    });
+  };
+
+  const signOutSSR = async () => {
+    const res = await fetch("/api/signin", {
+      method: "DELETE",
+    });
+
+    await signOut(auth);
   };
 </script>
 
