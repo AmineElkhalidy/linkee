@@ -3,7 +3,7 @@
   import { signOut } from "firebase/auth";
 </script>
 
-<header class="fixed top-5 left-0 w-full px-10 z-50">
+<header class="fixed top-5 left-0 w-full px-4 sm:px-8 md:px-10 z-50">
   <nav class="navbar bg-slate-100 rounded-full px-4">
     <div class="flex-1">
       <a href="/" class="text-xl text-black font-semibold md:text-2xl ml-3"
