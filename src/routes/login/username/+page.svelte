@@ -64,7 +64,7 @@
       </span>
     </h2>
 
-    <p class="mb-3">(Usernames cannot be changed)</p>
+    <p class="mb-3 text-red-500">*Usernames cannot be changed*</p>
     <a
       href="/login/photo"
       class="btn btn-primary px-10 text-white font-semibold sm:text-lg"
@@ -102,8 +102,10 @@
           </p>
         {/if}
 
-        {#if isAvailable}
-          <button class="btn btn-success">Confirm Username @{username} </button>
+        {#if isValid && isAvailable}
+          <button class="btn btn-success text-white"
+            >Confirm Username @{username}
+          </button>
         {/if}
       </div>
     </form>

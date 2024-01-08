@@ -45,6 +45,7 @@ function userStore() {
 
   return { subscribe };
 }
+
 export const user = userStore();
 
 // export const userData = writable<any>(null);
@@ -62,7 +63,6 @@ export function docStore<T>(path: string) {
   const docRef = doc(db, path);
 
   let unsubscribe: () => void;
-
   const { subscribe } = writable<T | null>(null, (set) => {
     unsubscribe = onSnapshot(docRef, (snapshot) => {
       set((snapshot.data() as T) ?? null);

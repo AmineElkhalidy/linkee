@@ -18,14 +18,6 @@
       body: JSON.stringify({ idToken }),
     });
   };
-
-  const signOutSSR = async () => {
-    const res = await fetch("/api/signin", {
-      method: "DELETE",
-    });
-
-    await signOut(auth);
-  };
 </script>
 
 <!-- $user: We subscribe to the user store... -->

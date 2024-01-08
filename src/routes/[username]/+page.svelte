@@ -1,9 +1,20 @@
 <script lang="ts">
   import UserLink from "$lib/components/UserLink.svelte";
   import type { PageData } from "./$types";
-  import { userData } from "$lib/firebase";
+  import { userData, auth } from "$lib/firebase";
+  import { signOut } from "firebase/auth";
+  import { goto } from "$app/navigation";
 
   $: href = `/${$userData?.username}/edit`;
+
+  const signOutSSR = async () => {
+    const res = await fetch("/api/signin", {
+      method: "DELETE",
+    });
+
+    await signOut(auth);
+    goto("/login");
+  };
 
   export let data: PageData;
 </script>
@@ -14,7 +25,7 @@
 </svelte:head>
 
 <main class="prose text-center mx-auto mt-16">
-  <h1 class="text-5xl sm:text-6xl md:text-7xl text-purple-500">
+  <h1 class="text-3xl sm:text-5xl md:text-6xl text-green-500">
     @{data.username}
   </h1>
 
@@ -23,7 +34,7 @@
       src={data.photoURL ?? "/profile.webp"}
       alt="Pic URL"
       width="256"
-      class="mx-auto rounded-full border border-purple-500"
+      class="mx-auto rounded-full border border-green-500"
     />
   </div>
 
@@ -40,9 +51,15 @@
     </ul>
   </div>
 
-  <div class="flex justify-center items-center mb-8">
+  <div class="flex flex-col justify-center items-center mb-8 gap-16">
     <a {href} class="btn btn-outline btn-info mx-auto my-4 px-10">
       Add a Link
     </a>
+
+    <button
+      on:click={signOutSSR}
+      class="btn btn-error px-10 text-white font-semibold sm:text-lg"
+      >Sign Out</button
+    >
   </div>
 </main>
