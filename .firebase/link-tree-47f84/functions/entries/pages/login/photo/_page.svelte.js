@@ -1,5 +1,5 @@
 import { v as validate_store, s as subscribe } from "../../../../chunks/utils.js";
-import { c as create_ssr_component, v as validate_component, g as add_attribute } from "../../../../chunks/ssr.js";
+import { c as create_ssr_component, v as validate_component, a as add_attribute } from "../../../../chunks/ssr.js";
 import { A as AuthCheck } from "../../../../chunks/AuthCheck.js";
 import { a as user, u as userData } from "../../../../chunks/firebase.js";
 import "firebase/firestore";

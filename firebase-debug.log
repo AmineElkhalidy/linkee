@@ -1,32 +1,32 @@
-[debug] [2024-01-01T10:03:26.193Z] ----------------------------------------------------------------------
-[debug] [2024-01-01T10:03:26.195Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
-[debug] [2024-01-01T10:03:26.196Z] CLI Version:   13.0.2
-[debug] [2024-01-01T10:03:26.196Z] Platform:      win32
-[debug] [2024-01-01T10:03:26.196Z] Node Version:  v18.18.0
-[debug] [2024-01-01T10:03:26.197Z] Time:          Mon Jan 01 2024 11:03:26 GMT+0100 (GMT+01:00)
-[debug] [2024-01-01T10:03:26.197Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T20:51:46.302Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T20:51:46.304Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-10T20:51:46.304Z] CLI Version:   13.0.3
+[debug] [2024-01-10T20:51:46.304Z] Platform:      win32
+[debug] [2024-01-10T20:51:46.304Z] Node Version:  v18.18.0
+[debug] [2024-01-10T20:51:46.306Z] Time:          Wed Jan 10 2024 21:51:46 GMT+0100 (GMT+01:00)
+[debug] [2024-01-10T20:51:46.306Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2024-01-01T10:03:26.280Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2024-01-01T10:03:26.280Z] > authorizing via signed-in user (a.amineelkhalidy@gmail.com)
-[debug] [2024-01-01T10:03:26.280Z] [iam] checking project link-tree-47f84 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2024-01-01T10:03:26.283Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions [none]
-[debug] [2024-01-01T10:03:26.283Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions x-goog-quota-user=projects/link-tree-47f84
-[debug] [2024-01-01T10:03:26.283Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2024-01-01T10:03:27.257Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions 200
-[debug] [2024-01-01T10:03:27.258Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2024-01-01T10:03:27.261Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 [none]
-[debug] [2024-01-01T10:03:27.624Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 200
-[debug] [2024-01-01T10:03:27.625Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 {"projectId":"link-tree-47f84","projectNumber":"580180879535","displayName":"linkee","name":"projects/link-tree-47f84","resources":{"hostingSite":"link-tree-47f84","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_80c3803f-0093-42c1-b965-d738da3f067d"}
-[debug] [2024-01-01T10:03:32.396Z] defaultcredentials: writing to file C:\Users\amine\AppData\Roaming\firebase\a_amineelkhalidy_gmail.com_application_default_credentials.json
-[debug] [2024-01-01T10:03:32.398Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites pageToken=&pageSize=10
-[debug] [2024-01-01T10:03:33.791Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
-[debug] [2024-01-01T10:03:33.791Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
-[debug] [2024-01-01T10:03:33.795Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 
-[debug] [2024-01-01T10:03:35.019Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
-[debug] [2024-01-01T10:03:35.020Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
-[debug] [2024-01-01T10:03:35.023Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config [none]
-[debug] [2024-01-01T10:03:35.831Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config 200
-[debug] [2024-01-01T10:03:35.832Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config {"projectId":"link-tree-47f84","appId":"1:580180879535:web:6603e2068de6e69d664c5a","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central","apiKey":"AIzaSyAK0o5ZohFJiZk-eF6wHMgFFyoemMOPGeE","authDomain":"link-tree-47f84.firebaseapp.com","messagingSenderId":"580180879535"}
+[debug] [2024-01-10T20:51:46.374Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T20:51:46.375Z] > authorizing via signed-in user (a.amineelkhalidy@gmail.com)
+[debug] [2024-01-10T20:51:46.375Z] [iam] checking project link-tree-47f84 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T20:51:46.377Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions [none]
+[debug] [2024-01-10T20:51:46.377Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions x-goog-quota-user=projects/link-tree-47f84
+[debug] [2024-01-10T20:51:46.378Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T20:51:47.419Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions 200
+[debug] [2024-01-10T20:51:47.420Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T20:51:47.422Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 [none]
+[debug] [2024-01-10T20:51:48.034Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 200
+[debug] [2024-01-10T20:51:48.035Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 {"projectId":"link-tree-47f84","projectNumber":"580180879535","displayName":"linkee","name":"projects/link-tree-47f84","resources":{"hostingSite":"link-tree-47f84","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_d7dffdbf-b6bf-45af-ba82-d14a4dc517aa"}
+[debug] [2024-01-10T20:51:51.871Z] defaultcredentials: writing to file C:\Users\amine\AppData\Roaming\firebase\a_amineelkhalidy_gmail.com_application_default_credentials.json
+[debug] [2024-01-10T20:51:51.872Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites pageToken=&pageSize=10
+[debug] [2024-01-10T20:51:53.526Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
+[debug] [2024-01-10T20:51:53.527Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-10T20:51:53.530Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 
+[debug] [2024-01-10T20:51:54.962Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
+[debug] [2024-01-10T20:51:54.964Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-10T20:51:54.965Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config [none]
+[debug] [2024-01-10T20:51:55.920Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config 200
+[debug] [2024-01-10T20:51:55.920Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config {"projectId":"link-tree-47f84","appId":"1:580180879535:web:6603e2068de6e69d664c5a","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central","apiKey":"AIzaSyAK0o5ZohFJiZk-eF6wHMgFFyoemMOPGeE","authDomain":"link-tree-47f84.firebaseapp.com","messagingSenderId":"580180879535"}
 [info] 
    Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
    While this integration is maintained by Googlers it is not a supported Firebase product.
@@ -38,42 +38,47 @@
 
    We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
 
-[debug] [2024-01-01T10:04:34.720Z] Error: Command failed: npm i --omit dev --no-audit
+[debug] [2024-01-10T20:53:39.306Z] Error: Command failed: npm i --omit dev --no-audit
     at checkExecSyncError (node:child_process:890:11)
     at execSync (node:child_process:962:15)
     at prepareFrameworks (C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:372:42)
     at async deploy (C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
 [error] 
 [error] Error: An unexpected error has occurred.
-[debug] [2024-01-01T10:05:05.565Z] ----------------------------------------------------------------------
-[debug] [2024-01-01T10:05:05.567Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
-[debug] [2024-01-01T10:05:05.567Z] CLI Version:   13.0.2
-[debug] [2024-01-01T10:05:05.567Z] Platform:      win32
-[debug] [2024-01-01T10:05:05.567Z] Node Version:  v18.18.0
-[debug] [2024-01-01T10:05:05.568Z] Time:          Mon Jan 01 2024 11:05:05 GMT+0100 (GMT+01:00)
-[debug] [2024-01-01T10:05:05.569Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T20:59:11.791Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T20:59:11.793Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-10T20:59:11.793Z] CLI Version:   13.0.3
+[debug] [2024-01-10T20:59:11.794Z] Platform:      win32
+[debug] [2024-01-10T20:59:11.794Z] Node Version:  v18.18.0
+[debug] [2024-01-10T20:59:11.795Z] Time:          Wed Jan 10 2024 21:59:11 GMT+0100 (GMT+01:00)
+[debug] [2024-01-10T20:59:11.795Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2024-01-01T10:05:05.637Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2024-01-01T10:05:05.637Z] > authorizing via signed-in user (a.amineelkhalidy@gmail.com)
-[debug] [2024-01-01T10:05:05.637Z] [iam] checking project link-tree-47f84 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2024-01-01T10:05:05.639Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions [none]
-[debug] [2024-01-01T10:05:05.640Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions x-goog-quota-user=projects/link-tree-47f84
-[debug] [2024-01-01T10:05:05.640Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2024-01-01T10:05:06.555Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions 200
-[debug] [2024-01-01T10:05:06.556Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2024-01-01T10:05:06.559Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 [none]
-[debug] [2024-01-01T10:05:06.896Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 200
-[debug] [2024-01-01T10:05:06.897Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 {"projectId":"link-tree-47f84","projectNumber":"580180879535","displayName":"linkee","name":"projects/link-tree-47f84","resources":{"hostingSite":"link-tree-47f84","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_80c3803f-0093-42c1-b965-d738da3f067d"}
-[debug] [2024-01-01T10:05:11.291Z] defaultcredentials: writing to file C:\Users\amine\AppData\Roaming\firebase\a_amineelkhalidy_gmail.com_application_default_credentials.json
-[debug] [2024-01-01T10:05:11.293Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites pageToken=&pageSize=10
-[debug] [2024-01-01T10:05:12.515Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
-[debug] [2024-01-01T10:05:12.516Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
-[debug] [2024-01-01T10:05:12.520Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 
-[debug] [2024-01-01T10:05:13.735Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
-[debug] [2024-01-01T10:05:13.735Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
-[debug] [2024-01-01T10:05:13.736Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config [none]
-[debug] [2024-01-01T10:05:14.461Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config 200
-[debug] [2024-01-01T10:05:14.462Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config {"projectId":"link-tree-47f84","appId":"1:580180879535:web:6603e2068de6e69d664c5a","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central","apiKey":"AIzaSyAK0o5ZohFJiZk-eF6wHMgFFyoemMOPGeE","authDomain":"link-tree-47f84.firebaseapp.com","messagingSenderId":"580180879535"}
+[debug] [2024-01-10T20:59:11.863Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T20:59:11.864Z] > authorizing via signed-in user (a.amineelkhalidy@gmail.com)
+[debug] [2024-01-10T20:59:11.864Z] [iam] checking project link-tree-47f84 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T20:59:11.865Z] > refreshing access token with scopes: []
+[debug] [2024-01-10T20:59:11.867Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-01-10T20:59:11.867Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-01-10T20:59:12.796Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-01-10T20:59:12.796Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-01-10T20:59:12.816Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions [none]
+[debug] [2024-01-10T20:59:12.816Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions x-goog-quota-user=projects/link-tree-47f84
+[debug] [2024-01-10T20:59:12.817Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T20:59:14.947Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions 200
+[debug] [2024-01-10T20:59:14.948Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T20:59:14.951Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 [none]
+[debug] [2024-01-10T20:59:15.716Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 200
+[debug] [2024-01-10T20:59:15.716Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 {"projectId":"link-tree-47f84","projectNumber":"580180879535","displayName":"linkee","name":"projects/link-tree-47f84","resources":{"hostingSite":"link-tree-47f84","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_d7dffdbf-b6bf-45af-ba82-d14a4dc517aa"}
+[debug] [2024-01-10T20:59:19.714Z] defaultcredentials: writing to file C:\Users\amine\AppData\Roaming\firebase\a_amineelkhalidy_gmail.com_application_default_credentials.json
+[debug] [2024-01-10T20:59:19.716Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites pageToken=&pageSize=10
+[debug] [2024-01-10T20:59:21.251Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
+[debug] [2024-01-10T20:59:21.253Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-10T20:59:21.256Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 
+[debug] [2024-01-10T20:59:22.760Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
+[debug] [2024-01-10T20:59:22.760Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-10T20:59:22.761Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config [none]
+[debug] [2024-01-10T20:59:23.694Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config 200
+[debug] [2024-01-10T20:59:23.694Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config {"projectId":"link-tree-47f84","appId":"1:580180879535:web:6603e2068de6e69d664c5a","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central","apiKey":"AIzaSyAK0o5ZohFJiZk-eF6wHMgFFyoemMOPGeE","authDomain":"link-tree-47f84.firebaseapp.com","messagingSenderId":"580180879535"}
 [info] 
    Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
    While this integration is maintained by Googlers it is not a supported Firebase product.
@@ -85,7 +90,54 @@
 
    We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
 
-[debug] [2024-01-01T10:05:52.962Z] Error: Command failed: npm i --omit dev --no-audit
+[debug] [2024-01-10T20:59:48.554Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at prepareFrameworks (C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:372:42)
+    at async deploy (C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-01-10T21:00:31.236Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T21:00:31.238Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --force
+[debug] [2024-01-10T21:00:31.238Z] CLI Version:   13.0.3
+[debug] [2024-01-10T21:00:31.239Z] Platform:      win32
+[debug] [2024-01-10T21:00:31.239Z] Node Version:  v18.18.0
+[debug] [2024-01-10T21:00:31.240Z] Time:          Wed Jan 10 2024 22:00:31 GMT+0100 (GMT+01:00)
+[debug] [2024-01-10T21:00:31.240Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-10T21:00:31.306Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T21:00:31.307Z] > authorizing via signed-in user (a.amineelkhalidy@gmail.com)
+[debug] [2024-01-10T21:00:31.307Z] [iam] checking project link-tree-47f84 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T21:00:31.309Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions [none]
+[debug] [2024-01-10T21:00:31.309Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions x-goog-quota-user=projects/link-tree-47f84
+[debug] [2024-01-10T21:00:31.309Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T21:00:32.777Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions 200
+[debug] [2024-01-10T21:00:32.778Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T21:00:32.780Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 [none]
+[debug] [2024-01-10T21:00:33.462Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 200
+[debug] [2024-01-10T21:00:33.462Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 {"projectId":"link-tree-47f84","projectNumber":"580180879535","displayName":"linkee","name":"projects/link-tree-47f84","resources":{"hostingSite":"link-tree-47f84","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_d7dffdbf-b6bf-45af-ba82-d14a4dc517aa"}
+[debug] [2024-01-10T21:00:37.402Z] defaultcredentials: writing to file C:\Users\amine\AppData\Roaming\firebase\a_amineelkhalidy_gmail.com_application_default_credentials.json
+[debug] [2024-01-10T21:00:37.404Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites pageToken=&pageSize=10
+[debug] [2024-01-10T21:00:39.234Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
+[debug] [2024-01-10T21:00:39.234Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-10T21:00:39.235Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 
+[debug] [2024-01-10T21:00:40.589Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
+[debug] [2024-01-10T21:00:40.591Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-10T21:00:40.593Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config [none]
+[debug] [2024-01-10T21:00:42.027Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config 200
+[debug] [2024-01-10T21:00:42.027Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config {"projectId":"link-tree-47f84","appId":"1:580180879535:web:6603e2068de6e69d664c5a","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central","apiKey":"AIzaSyAK0o5ZohFJiZk-eF6wHMgFFyoemMOPGeE","authDomain":"link-tree-47f84.firebaseapp.com","messagingSenderId":"580180879535"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-01-10T21:01:01.088Z] Error: Command failed: npm i --omit dev --no-audit
     at checkExecSyncError (node:child_process:890:11)
     at execSync (node:child_process:962:15)
     at prepareFrameworks (C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:372:42)

@@ -1,4 +1,4 @@
-import { c as create_ssr_component, g as add_attribute, e as escape } from "./ssr.js";
+import { c as create_ssr_component, a as add_attribute, e as escape } from "./ssr.js";
 const UserLink = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { icon = "default" } = $$props;
   let { url = "foo" } = $$props;
@@ -9,7 +9,7 @@ const UserLink = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     $$bindings.url(url);
   if ($$props.title === void 0 && $$bindings.title && title !== void 0)
     $$bindings.title(title);
-  return `<a${add_attribute("href", url, 0)} class="stack w-full max-w-md text-center bg-base-300 flex justify-center items-center p-4 rounded-lg not-prose no-underline border border-purple-500"><img${add_attribute("src", `/${icon}.png`, 0)}${add_attribute("alt", icon, 0)} width="32" height="32" class="w-8"> <span class="text-lg text-white font-bold">${escape(title)}</span></a>`;
+  return `<a${add_attribute("href", url, 0)} class="stack w-full max-w-md text-center bg-base-300 flex justify-center items-center p-4 rounded-lg not-prose no-underline border border-green-500"><img${add_attribute("src", `/${icon}.png`, 0)}${add_attribute("alt", icon, 0)} width="32" height="32" class="w-8"> <span class="text-lg text-white font-bold">${escape(title)}</span></a>`;
 });
 export {
   UserLink as U

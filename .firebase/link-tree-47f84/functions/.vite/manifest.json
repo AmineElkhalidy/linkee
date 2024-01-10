@@ -93,7 +93,7 @@
   },
   "src/routes/+layout.svelte": {
     "css": [
-      "_app/immutable/assets/_layout.kvBXkfo_.css"
+      "_app/immutable/assets/_layout.c-xocg_t.css"
     ],
     "file": "entries/pages/_layout.svelte.js",
     "imports": [
@@ -183,9 +183,7 @@
     "imports": [
       "_utils.js",
       "_ssr.js",
-      "_stores.js",
-      "_firebase.js",
-      "_index2.js"
+      "_stores.js"
     ],
     "isEntry": true,
     "src": "src/routes/login/+layout.svelte"

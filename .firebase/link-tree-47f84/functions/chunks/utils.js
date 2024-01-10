@@ -30,18 +30,9 @@ function subscribe(store, ...callbacks) {
   const unsub = store.subscribe(...callbacks);
   return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
 }
-function compute_rest_props(props, keys) {
-  const rest = {};
-  keys = new Set(keys);
-  for (const k in props)
-    if (!keys.has(k) && k[0] !== "$")
-      rest[k] = props[k];
-  return rest;
-}
 export {
   safe_not_equal as a,
   blank_object as b,
-  compute_rest_props as c,
   is_function as i,
   noop as n,
   run_all as r,
