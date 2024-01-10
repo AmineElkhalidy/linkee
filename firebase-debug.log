@@ -144,3 +144,50 @@
     at async deploy (C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
 [error] 
 [error] Error: An unexpected error has occurred.
+[debug] [2024-01-10T21:03:39.896Z] ----------------------------------------------------------------------
+[debug] [2024-01-10T21:03:39.898Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-01-10T21:03:39.898Z] CLI Version:   13.0.3
+[debug] [2024-01-10T21:03:39.899Z] Platform:      win32
+[debug] [2024-01-10T21:03:39.899Z] Node Version:  v18.18.0
+[debug] [2024-01-10T21:03:39.900Z] Time:          Wed Jan 10 2024 22:03:39 GMT+0100 (GMT+01:00)
+[debug] [2024-01-10T21:03:39.900Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-10T21:03:39.967Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-10T21:03:39.967Z] > authorizing via signed-in user (a.amineelkhalidy@gmail.com)
+[debug] [2024-01-10T21:03:39.967Z] [iam] checking project link-tree-47f84 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-01-10T21:03:39.969Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions [none]
+[debug] [2024-01-10T21:03:39.970Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions x-goog-quota-user=projects/link-tree-47f84
+[debug] [2024-01-10T21:03:39.970Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T21:03:42.599Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions 200
+[debug] [2024-01-10T21:03:42.599Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/link-tree-47f84:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-01-10T21:03:42.601Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 [none]
+[debug] [2024-01-10T21:03:43.119Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 200
+[debug] [2024-01-10T21:03:43.120Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84 {"projectId":"link-tree-47f84","projectNumber":"580180879535","displayName":"linkee","name":"projects/link-tree-47f84","resources":{"hostingSite":"link-tree-47f84","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_d7dffdbf-b6bf-45af-ba82-d14a4dc517aa"}
+[debug] [2024-01-10T21:03:47.118Z] defaultcredentials: writing to file C:\Users\amine\AppData\Roaming\firebase\a_amineelkhalidy_gmail.com_application_default_credentials.json
+[debug] [2024-01-10T21:03:47.120Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites pageToken=&pageSize=10
+[debug] [2024-01-10T21:03:48.958Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
+[debug] [2024-01-10T21:03:48.959Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-10T21:03:48.962Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 
+[debug] [2024-01-10T21:03:52.259Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites 200
+[debug] [2024-01-10T21:03:52.260Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-tree-47f84/sites {"sites":[{"name":"projects/link-tree-47f84/sites/link-tree-47f84","defaultUrl":"https://link-tree-47f84.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2024-01-10T21:03:52.261Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config [none]
+[debug] [2024-01-10T21:03:53.185Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config 200
+[debug] [2024-01-10T21:03:53.186Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-tree-47f84/webApps/-/config {"projectId":"link-tree-47f84","appId":"1:580180879535:web:6603e2068de6e69d664c5a","storageBucket":"link-tree-47f84.appspot.com","locationId":"us-central","apiKey":"AIzaSyAK0o5ZohFJiZk-eF6wHMgFFyoemMOPGeE","authDomain":"link-tree-47f84.firebaseapp.com","messagingSenderId":"580180879535"}
+[info] 
+   Thank you for trying our experimental support for SvelteKit on Firebase Hosting.
+   While this integration is maintained by Googlers it is not a supported Firebase product.
+   Issues filed on GitHub will be addressed on a best-effort basis by maintainers and other community members.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/frameworks-overview
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-01-10T21:04:10.668Z] Error: Command failed: npm i --omit dev --no-audit
+    at checkExecSyncError (node:child_process:890:11)
+    at execSync (node:child_process:962:15)
+    at prepareFrameworks (C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:372:42)
+    at async deploy (C:\Users\amine\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
